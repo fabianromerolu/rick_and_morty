@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Agrega esta línea para centrar horizontalmente */
+  }
+  
+  .input {
+    background-color: #FEFE78;
+    border: 1px solid #FFFE6B;
+    color: #70D024;
+    padding: 8px;
+    margin-right: 10px;
+  }
+  
+  .button {
+    background-color: #FFFE6B;
+    color: #70D024;
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+  

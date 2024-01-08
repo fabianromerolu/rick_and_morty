@@ -20,7 +20,7 @@
     z-index: 1;
     top: 5px;
     right: 5px;
-    background-color: #FFFE6B; /* Color rojo para el botón */
+    background-color: red; 
     color: rgb(0, 0, 0);
     border: 3px solid #000000;
     border-bottom-left-radius: 4px;
@@ -29,7 +29,7 @@
 }
 
 .closeButton:hover {
-    background-color: red; /* Rojo 50% más claro */
+    background-color: #FFFE6B; 
     color: rgb(255, 255, 255);
 }
 

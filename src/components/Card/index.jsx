@@ -2,10 +2,10 @@
 import style from './Card.module.css';
 
 const Card = (props) => {
-const { id,name, status, species, gender, origin, image, onClick } = props;
+const { id, name, status, species, gender, origin, image, onClose } = props;
    return(
        <div className={style.container}>
-         <button onClick={onClick} className={style.closeButton}>X</button>
+         <button onClick={()=>onClose(props.id)} className={style.closeButton}>X</button>
          <h1 className={style.nombrepersonaje}>{name}</h1>
          <div className={style.textContainer}>
             <h2 className={style.status}>{status}</h2>

@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    justify-content: space-between; /* Otra opción podría ser 'space-around' o 'space-evenly' según tus preferencias */
+    justify-content: space-around; /* Otra opción podría ser 'space-around' o 'space-evenly' según tus preferencias */
     align-items: center; /* Para centrar verticalmente los elementos en el contenedor */
     flex-wrap: wrap; /* Para que los elementos se envuelvan a la siguiente línea si no caben en el ancho del contenedor */
 }

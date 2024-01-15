@@ -20,7 +20,7 @@
     z-index: 1;
     top: 5px;
     right: 5px;
-    background-color: red; 
+    background-color: #FFFE6B; 
     color: rgb(0, 0, 0);
     border: 3px solid #000000;
     border-bottom-left-radius: 4px;
@@ -29,7 +29,7 @@
 }
 
 .closeButton:hover {
-    background-color: #FFFE6B; 
+    background-color: red; 
     color: rgb(255, 255, 255);
 }
 
@@ -41,11 +41,22 @@
 }
 
 .nombrepersonaje {
+    padding-left: 10px;
+    padding-right: 10px;
     font-size: 22px;
     color: rgb(0, 0, 0);
     text-align: center;
     font-family: 'Get Schwifty';
     -webkit-text-stroke: 1px rgba(0,0,0,0.5);
+    overflow: hidden;
+    white-space: nowrap; /* Evita el salto de línea */
+    text-overflow: ellipsis; /* Muestra puntos suspensivos (...) si el texto es demasiado largo */
+}
+
+.nombrepersonaje:hover{
+    overflow: visible; /* Muestra el texto completo al pasar el cursor */
+    white-space: normal; /* Permite el salto de línea si es necesario */
+    width: auto;
 }
 
 .textContainer {

@@ -1,12 +1,15 @@
 //import {Rick} from "../../data";
 import style from './Card.module.css';
+import { Link } from 'react-router-dom';
 
 const Card = (props) => {
 const { id, name, status, species, gender, origin, image, onClose } = props;
    return(
        <div className={style.container}>
          <button onClick={()=>onClose(props.id)} className={style.closeButton}>X</button>
+         <Link to={`/detail/${id}`}>
          <h1 className={style.nombrepersonaje}>{name}</h1>
+         </Link>
          <div className={style.textContainer}>
             <h2 className={style.status}>{status}</h2>
             <h2 className={style.species}>{species}</h2>

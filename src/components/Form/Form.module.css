@@ -1,0 +1,55 @@
+.container {
+    display: flex;
+    justify-content: space-around; /* Otra opción podría ser 'space-around' o 'space-evenly' según tus preferencias */
+    align-items: center; /* Para centrar verticalmente los elementos en el contenedor */
+    flex-wrap: wrap; /* Para que los elementos se envuelvan a la siguiente línea si no caben en el ancho del contenedor */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;  
+}
+.formcontainer {
+    align-items: center;
+    border: 5px solid #000000;
+    border-radius: 10px;
+    background: radial-gradient(circle farthest-corner at center, #FEFE78, #FFFE6B, #70D024 );
+    width: 290px;
+    font-family: 'Schwifty';
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 8px;
+    padding-top: 5px;
+}
+
+.IniButton {
+    font-size: 18px;
+    margin-top: 8px;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    margin-right: 5px;    
+    background-color: #e5ff00; 
+    color: rgb(0, 0, 0);
+    border-radius: 10px, 10px, 10px, 10px,;
+    border: 1px solid #000000;
+    border-bottom-left-radius: 4px;
+    cursor: pointer;
+}
+
+.IniButton:hover {
+    background-color: rgb(0, 255, 0); 
+    color: rgb(0, 0, 0);
+}
+
+
+.image{
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.error{
+    font-size: 12px;
+    color: red;
+    display: block;
+}

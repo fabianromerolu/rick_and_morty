@@ -1,9 +1,22 @@
 .container {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border: 5px solid #000000;
-    border-radius: 10px;
-    background: radial-gradient(circle farthest-corner at center, #FEFE78, #FFFE6B, #70D024);
-    flex-direction: row; /* Cambia a dirección horizontal */
+  display: flex; /* Utilizamos flexbox para alinear los elementos en línea */
+  align-items: center; /* Alinea los elementos verticalmente en el centro */
+  justify-content: space-between; /* Distribuye los elementos a lo largo del contenedor */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 5px solid #000000;
+  border-radius: 10px;
+  background: radial-gradient(circle farthest-corner at center, #FEFE78, #FFFE6B, #70D024);
+  flex-direction: row; /* Cambia a dirección horizontal */
+}
+
+  /* Estilos opcionales para los botones y el SearchBar */
+  button{
+    margin: 5px; /* Agrega un pequeño margen entre los elementos */
   }
   
+  .SearchBar {
+    order: 1; /* Cambia el orden para que la SearchBar esté a la izquierda */
+  }

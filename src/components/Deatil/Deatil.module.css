@@ -1,0 +1,51 @@
+@font-face {
+    font-family: 'Get Schwifty';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3089507/get-schwifty.woff') format('woff');
+  }
+
+.container {      
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;           
+    border: 5px solid #000000;
+    border-radius: 10px;
+    background: radial-gradient(circle farthest-corner at center, #FEFE78, #FFFE6B, #70D024 );
+}
+
+.nombrepersonaje {
+    margin-bottom: 10px; /* Agrega espacio entre el nombre y la imagen */
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    font-family: 'Get Schwifty';
+    font-size: 60px;
+    color: rgb(0, 0, 0);
+}
+
+.status, .species, .gender, .origin {
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    height: 20px;
+    width: 50px;
+    border-radius: 10px;
+    background: radial-gradient(circle farthest-corner at center, #FEFE78, #FFFE6B, #FFFE6B, #70D024 );
+    color: rgba(0, 0, 0, 0.7);
+    
+}
+
+.image {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;  
+    float: right;
+    width: 350px; /* Asegúrate de que la imagen no supere el ancho del contenedor */
+  }
+  

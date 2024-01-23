@@ -3,17 +3,17 @@ import SearchBar from '../SearchBar/';
 import { NavLink } from 'react-router-dom';
 
 
-const Nav = ({onSearch}) => {
+const Nav = ({onSearch, onLogout}) => {
    return(
     <div className={style.container}>
         <SearchBar onSearch={onSearch} />
+        <div>
         <NavLink to={`/about`}><button>About</button></NavLink>
         <NavLink to={`/home`}><button>Home</button></NavLink>
+        <button onClick={onLogout}>Logout</button>
+        </div>
     </div> 
    );
 }
 
 export default Nav;
-
-
-//<img src={process.env.PUBLIC_URL + '/titi.PNG'} alt="img" className={style.img} />

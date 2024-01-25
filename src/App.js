@@ -10,6 +10,7 @@ import { Route, Routes } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import React,{ useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Favorites from './components/Favorites/favorite';
 //import characters from './data.js';
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
             <Route path="/" element={<Form login={login}/>}></Route>
             <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} ></Route>
             <Route path="/about" element={<About/>}></Route>
+            <Route path="/favorites" element={<Favorites/>}></Route>
             <Route path="/detail/:id" element={<Deatil/>}></Route>
          </Routes>
          

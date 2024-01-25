@@ -1,12 +1,62 @@
 //import {Rick} from "../../data";
 import style from './Card.module.css';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { addFav, removeFav } from '../../redux/actions';
+import { useState, useEffect } from 'react';
 
 const Card = (props) => {
-const { id, name, status, species, gender, origin, image, onClose } = props;
+const { 
+   id, 
+   name, 
+   status, 
+   species, 
+   gender, 
+   origin, 
+   image, 
+   onClose, 
+   addFav, 
+   removeFav,
+   favorites,
+} = props;
+const [isFav, SetIsFav] = useState(false);
+const handleFavorite = () => {
+   if(isFav){
+      SetIsFav(false);
+      removeFav(props.id);
+   }else{
+      SetIsFav(true);
+      addFav({         
+         id, 
+         name, 
+         status, 
+         species, 
+         gender, 
+         origin, 
+         image, 
+      });
+   }
+   SetIsFav(!isFav);
+};
+
+useEffect(() => {
+   favorites.forEach((fav) => {
+      if (fav.id === props.id) {
+         SetIsFav(true);
+      }
+   });
+}, [favorites]);
+
    return(
        <div className={style.container}>
          <button onClick={()=>onClose(props.id)} className={style.closeButton}>X</button>
+         {
+         isFav ? (
+            <button onClick={handleFavorite}>❤️</button>
+         ) : (
+            <button onClick={handleFavorite}>🤍</button>
+         )
+         }
          <Link to={`/detail/${id}`}>
          <h1 className={style.nombrepersonaje}>{name}</h1>
          </Link>
@@ -22,8 +72,14 @@ const { id, name, status, species, gender, origin, image, onClose } = props;
    )
 }
 
-export default Card;
 
+const mapStateToProps = (state) => {
+   return {
+      favorites: state.myFavorites,
+   };
+};
+//export default Card;
+ export default connect(mapStateToProps, {addFav, removeFav})(Card)
 
 
 

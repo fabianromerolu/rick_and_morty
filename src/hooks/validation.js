@@ -32,13 +32,14 @@ const validation = (userData) => {
     if (!isUsernameLengthValid(userData.email)) {
         errors.email = 'El correo electrónico no puede tener más de 35 caracteres';
     }
-
     // Validar contraseña
     if (!userData.password) {
         errors.password = 'Campo obligatorio';
     } else if (!isPasswordValid(userData.password)) {
         errors.password = 'La contraseña debe contener al menos un número y tener una longitud entre 6 y 10 caracteres';
     }
+
+
 
     return errors;
 };

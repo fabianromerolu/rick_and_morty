@@ -1,7 +1,7 @@
 const About = () => {
     return (
         <div>
-            <p>OLIII PIJAAAA</p>
+            <img src={process.env.PUBLIC_URL + '/nosotrix.PNG'} alt="" />
         </div>
     );
 }

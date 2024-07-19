@@ -1,16 +1,23 @@
+.input {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  color: #70D024;
+  margin: 5px;
+  border-radius: 10px;
+}
 
-  .input {
-    background-color: #ffffff;
-    border: 1px solid #000000;
-    color: #70D024;
-    padding: 8px;
-    margin-right: 10px;
-  }
+.img{
+  top: 5%;
+  right: 52.5%; /* Ajusta la posición de la imagen a la derecha */
+  transform: translateY(-50%);
+  width: 30PX;
+  height: 30PX;
+  cursor: pointer;
+}
 
-  .img{
-    position: absolute;
-    width: 30PX;
-    height: 30PX;
-    cursor: pointer;
-  }
+.titulo{
+  cursor: pointer;
+  margin-left: 5%;
+}
 

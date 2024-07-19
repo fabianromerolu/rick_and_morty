@@ -15,7 +15,7 @@ const SearchBar = (props) => {
    };
 
    return (
-      <div className={style.container}>
+      <div className={style.container}> 
          <input className={style.input}
           type='search' 
           placeholder='Escribe el ID aquí...' 

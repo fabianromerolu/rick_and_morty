@@ -1,4 +1,3 @@
-//import {Rick} from "../../data";
 import style from './Card.module.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -6,59 +5,47 @@ import { addFav, removeFav } from '../../redux/actions';
 import { useState, useEffect } from 'react';
 
 const Card = (props) => {
-const { 
-   id, 
-   name, 
-   status, 
-   species, 
-   gender, 
-   origin, 
-   image, 
-   onClose, 
-   addFav, 
-   removeFav,
-   favorites,
-} = props;
-const [isFav, SetIsFav] = useState(false);
-const handleFavorite = () => {
-   if(isFav){
-      SetIsFav(false);
-      removeFav(props.id);
-   }else{
-      SetIsFav(true);
-      addFav({         
-         id, 
-         name, 
-         status, 
-         species, 
-         gender, 
-         origin, 
-         image, 
-      });
-   }
-   SetIsFav(!isFav);
-};
+   const { 
+      id, 
+      name, 
+      status, 
+      species, 
+      gender, 
+      origin, 
+      image, 
+      onClose, 
+      addFav, 
+      removeFav,
+      favorites,
+   } = props;
 
-useEffect(() => {
-   favorites.forEach((fav) => {
-      if (fav.id === props.id) {
-         SetIsFav(true);
+   const [isFav, setIsFav] = useState(false);
+
+   const handleFavorite = () => {
+      if (isFav) {
+         setIsFav(false);
+         removeFav(id);
+      } else {
+         setIsFav(true);
+         addFav({ id, name, status, species, gender, origin, image });
       }
-   });
-}, [favorites]);
+   };
 
-   return(
-       <div className={style.container}>
-         <button onClick={()=>onClose(props.id)} className={style.closeButton}>X</button>
-         {
-         isFav ? (
+   useEffect(() => {
+      const isFavorite = favorites.some((fav) => fav.id === id);
+      setIsFav(isFavorite);
+   }, [favorites, id]); // Incluye id en las dependencias
+
+   return (
+      <div className={style.container}>
+         <button onClick={() => onClose(id)} className={style.closeButton}>X</button>
+         {isFav ? (
             <button onClick={handleFavorite}>❤️</button>
          ) : (
             <button onClick={handleFavorite}>🤍</button>
-         )
-         }
+         )}
          <Link to={`/detail/${id}`}>
-         <h1 className={style.nombrepersonaje}>{name}</h1>
+            <h1 className={style.nombrepersonaje}>{name}</h1>
          </Link>
          <div className={style.textContainer}>
             <h2 className={style.status}>{status}</h2>
@@ -68,26 +55,15 @@ useEffect(() => {
          </div>
          <img className={style.image} src={image} alt='foto' />
          <h1 className={style.titulocarta}>CARD ID: {id}</h1>
-       </div>
-   )
-}
-
-
-const mapStateToProps = (state) => {
-   return {
-      favorites: state.myFavorites,
-   };
+      </div>
+   );
 };
-//export default Card;
- export default connect(mapStateToProps, {addFav, removeFav})(Card)
 
+const mapStateToProps = (state) => ({
+   favorites: state.myFavorites,
+});
 
-
-
-
-
-
-
+export default connect(mapStateToProps, { addFav, removeFav })(Card);
 
 
 
